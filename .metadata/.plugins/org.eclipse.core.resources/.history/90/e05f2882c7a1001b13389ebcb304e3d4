@@ -1,0 +1,39 @@
+package com.RedSocial.core.entity;
+
+public class FotoJPG implements Foto{
+
+	public FotoJPG() {
+	}
+	
+	public FotoJPG(String nombre, String ubicacion) {
+		this.nombre = nombre;
+		this.ubicacion = ubicacion;
+	}
+
+
+	private String nombre;
+	private String ubicacion;
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getUbicacion() {
+		return ubicacion;
+	}
+
+	public void setUbicacion(String ubicacion) {
+		this.ubicacion = ubicacion;
+	}
+
+
+	@Override
+	public void mostrar() {
+		System.out.println("Esta es una foto en formato JPG");
+	}
+
+}

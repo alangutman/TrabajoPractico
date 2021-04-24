@@ -1,0 +1,15 @@
+*** Ver archivos modificados sin comitear ***
+---------------------------------------------
+git status 
+
+*** Agregar archivos al pool de cambios ***
+---------------------------------------------
+git add .
+
+*** Cerrar versionado de cambios ***
+---------------------------------------------
+git commit -m "add Git Commands File"
+
+*** Subir versionado de cambios ya cerrado ***
+---------------------------------------------
+git push
