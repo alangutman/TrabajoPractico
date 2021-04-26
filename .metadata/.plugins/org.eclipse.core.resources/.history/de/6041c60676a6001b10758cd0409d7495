@@ -1,0 +1,11 @@
+package com.RedSocial.core.repository;
+
+import org.springframework.stereotype.Repository;
+
+import com.RedSocial.core.entity.FotoJPG;
+
+@Repository("FotoJPGRepository")
+public interface FotoJPGRepository extends FotoRepository{
+	public abstract FotoJPG findByNombre(String nombre);
+	public abstract FotoJPG findByIdFoto(long idFoto);
+}

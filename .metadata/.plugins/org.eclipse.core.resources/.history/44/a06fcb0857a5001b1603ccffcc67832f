@@ -1,0 +1,11 @@
+package com.RedSocial.core.entity;
+
+public class FotoJPG extends Foto{
+
+	@Override
+	public void mostrar() {
+		// TODO Auto-generated method stub
+		System.out.println("Soy una foto JPG");
+	}
+
+}

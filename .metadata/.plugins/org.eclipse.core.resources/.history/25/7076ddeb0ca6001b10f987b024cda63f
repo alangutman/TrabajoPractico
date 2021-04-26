@@ -1,0 +1,54 @@
+package com.RedSocial.core.model;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+public class FotoModel {
+
+	public FotoModel() {
+	
+	}
+
+	private long idFoto;
+	
+	private String nombre;
+	
+	private String ubicacion;
+	
+	private String tipo;
+
+	public long getIdFoto() {
+		return idFoto;
+	}
+
+	public void setIdFoto(long idFoto) {
+		this.idFoto = idFoto;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getUbicacion() {
+		return ubicacion;
+	}
+
+	public void setUbicacion(String ubicacion) {
+		this.ubicacion = ubicacion;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+
+}

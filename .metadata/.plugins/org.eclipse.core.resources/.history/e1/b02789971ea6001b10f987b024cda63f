@@ -1,0 +1,8 @@
+package com.RedSocial.core.service;
+
+import org.springframework.stereotype.Service;
+
+@Service("FotoService")
+public class FotoService {
+
+}

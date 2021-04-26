@@ -1,0 +1,34 @@
+package com.RedSocial.core.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.RedSocial.core.converter.FotoJPGConverter;
+import com.RedSocial.core.entity.Foto;
+import com.RedSocial.core.repository.FotoJPGRepository;
+
+@Service("FotoService")
+public class FotoService {
+
+	@Autowired
+	@Qualifier("FotoJPGRepository")
+	private FotoJPGRepository fotoJPGRepository;
+	
+	@Autowired
+	@Qualifier("FotoJPGConverter")
+	private FotoJPGConverter fotoJPGConverter;
+	
+	public boolean crear(Foto foto) {
+		try {
+			if(foto.getTipo().equals("JPG")) 
+				fotoJPGRepository.save(foto);
+			
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	
+}

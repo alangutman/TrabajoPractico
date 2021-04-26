@@ -1,0 +1,13 @@
+package com.RedSocial.core.converter;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.RedSocial.core.entity.Foto;
+import com.RedSocial.core.model.FotoModel;
+
+@Component("FotoConverter")
+public abstract class FotoConverter {
+	public abstract List<FotoModel> convertir(List<Foto> fotos);
+}
