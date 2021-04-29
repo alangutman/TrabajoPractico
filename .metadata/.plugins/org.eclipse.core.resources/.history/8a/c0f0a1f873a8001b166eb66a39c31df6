@@ -1,0 +1,11 @@
+package com.RedSocial.core.repository;
+
+import org.springframework.stereotype.Repository;
+
+import com.RedSocial.core.entity.Foto;
+
+@Repository("PublicacionRepository")
+public interface PublicacionRepository {
+	public abstract Foto findByAutor(String apodo);
+	public abstract Foto findByIdPublicacion(long idPublicacion);
+}

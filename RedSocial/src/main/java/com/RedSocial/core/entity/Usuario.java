@@ -1,12 +1,16 @@
 package com.RedSocial.core.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Table(name="Usuario")
 @Entity
@@ -21,12 +25,13 @@ public class Usuario implements Serializable{
 		
 	}
 	
-	public Usuario(long idUsuario, String apodo, String email, String contrasenia) {
+	public Usuario(long idUsuario, String apodo, String email, String contrasenia, List<Publicacion> publicaciones) {
 		super();
 		this.idUsuario = idUsuario;
 		this.apodo = apodo;
 		this.email = email;
 		this.contrasenia = contrasenia;
+		this.publicaciones = publicaciones;
 	}
 
 	@GeneratedValue
@@ -43,6 +48,10 @@ public class Usuario implements Serializable{
 	@Column(name="contrasenia")
 	private String contrasenia;
 
+	@OneToMany(mappedBy = "autor")
+	@JsonIgnore
+	private List<Publicacion> publicaciones;
+	
 	public long getIdUsuario() {
 		return idUsuario;
 	}
@@ -73,6 +82,14 @@ public class Usuario implements Serializable{
 
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
+	}
+
+	public List<Publicacion> getPublicaciones() {
+		return publicaciones;
+	}
+
+	public void setPublicaciones(List<Publicacion> publicaciones) {
+		this.publicaciones = publicaciones;
 	}
 	
 }
