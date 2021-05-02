@@ -42,7 +42,7 @@ public class PublicacionService {
 		try {
 			if (publicacion.getIdPublicacion() == 0 || Objects.isNull(publicacion.getIdPublicacion()))
 				return false; 
-		
+			
 			publicacionRepository.save(publicacion);
 			return true;
 		}catch(Exception e) {
@@ -66,16 +66,5 @@ public class PublicacionService {
 	
 	public PublicacionModel obtenerPorTitulo(String titulo){
 		return new PublicacionModel(publicacionRepository.findByTitulo(titulo));
-	}
-	
-	public boolean meGusta(long idPublicacion) {
-		try {
-			Publicacion publicacion = publicacionRepository.findByIdPublicacion(idPublicacion);
-			publicacion.setMeGusta(publicacion.getMeGusta() + 1);
-			publicacionRepository.save(publicacion);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
 	}
 }

@@ -45,9 +45,4 @@ public class PublicacionController {
 	public List<PublicacionModel> obtener(){
 		return publicacionService.obtener();
 	}
-	
-	@PostMapping("/publicacion/meGusta/{idPublicacion}")
-	public boolean meGusta(@PathVariable("idPublicacion") long idPublicacion) {
-		return publicacionService.meGusta(idPublicacion);
-	}
 }
