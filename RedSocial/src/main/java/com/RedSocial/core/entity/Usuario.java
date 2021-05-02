@@ -5,12 +5,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Table(name="Usuario")
 @Entity
@@ -48,8 +47,8 @@ public class Usuario implements Serializable{
 	@Column(name="contrasenia")
 	private String contrasenia;
 
-	@OneToMany(mappedBy = "autor")
-	@JsonIgnore
+	@OneToMany(fetch = FetchType.EAGER)
+	//@JoinColumn(name = "id_usuario")
 	private List<Publicacion> publicaciones;
 	
 	public long getIdUsuario() {

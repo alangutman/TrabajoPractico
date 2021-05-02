@@ -1,12 +1,10 @@
 package com.RedSocial.core.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 @JsonTypeName("FotoJpg")
-@Table(name="FotoJpg")
 @Entity
 public class FotoJpg extends Foto {
 
