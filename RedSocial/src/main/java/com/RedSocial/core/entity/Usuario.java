@@ -48,7 +48,6 @@ public class Usuario implements Serializable{
 	private String contrasenia;
 
 	@OneToMany(fetch = FetchType.EAGER)
-	//@JoinColumn(name = "id_usuario")
 	private List<Publicacion> publicaciones;
 	
 	public long getIdUsuario() {

@@ -25,7 +25,7 @@ public class FotoModel {
 	private long idFoto;	
 	private String nombre;
 	private String ubicacion;
-
+	
 	public long getIdFoto() {
 		return idFoto;
 	}
@@ -49,5 +49,5 @@ public class FotoModel {
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
 	}
-	
+		
 }

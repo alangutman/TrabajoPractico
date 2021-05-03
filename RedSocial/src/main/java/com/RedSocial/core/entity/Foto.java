@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,12 +15,13 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(
         use=JsonTypeInfo.Id.NAME,
         include=JsonTypeInfo.As.PROPERTY,
-        property="formato")
+        property="formato"
+)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value=FotoJpg.class, name= "FotoJpg")
+        @JsonSubTypes.Type(value=FotoJpg.class, name= "JPG")
 })
-@Table(name="Foto")
 @Entity
+@Table(name="Foto")
 public abstract class Foto implements Serializable {
 
 	/**
@@ -39,8 +41,8 @@ public abstract class Foto implements Serializable {
 		this.ubicacion = ubicacion;
 	}
 
-	@GeneratedValue
 	@Id
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	@Column(name="idFoto")
 	private long idFoto;
 	
@@ -49,7 +51,7 @@ public abstract class Foto implements Serializable {
 	
 	@Column(name="ubicacion")
 	private String ubicacion;
-	
+		
 	public long getIdFoto() {
 		return idFoto;
 	}
@@ -73,6 +75,6 @@ public abstract class Foto implements Serializable {
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
 	}
-	
+		
 	public abstract void mostrar();
 }

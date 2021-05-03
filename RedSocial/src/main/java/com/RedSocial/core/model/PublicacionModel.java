@@ -1,11 +1,13 @@
 package com.RedSocial.core.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.RedSocial.core.entity.Foto;
 import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.entity.Usuario;
 
@@ -15,13 +17,15 @@ public class PublicacionModel {
 		
 	}
 	
-	public PublicacionModel(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta, Usuario autor) {
+	public PublicacionModel(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta,
+			Usuario autor, List<Foto> fotos) {
 		this.idPublicacion = idPublicacion;
 		this.titulo = titulo;
 		this.fechaDePublicacion = fechaDePublicacion;
 		this.descripcion = descripcion;
 		this.meGusta = meGusta;
 		this.autor = autor;
+		this.fotos = fotos;
 	}
 
 	public PublicacionModel(Publicacion publicacion) {
@@ -31,6 +35,7 @@ public class PublicacionModel {
 		this.descripcion = publicacion.getDescripcion();
 		this.meGusta = publicacion.getMeGusta();
 		this.autor = publicacion.getAutor();
+		this.fotos = publicacion.getFotos();
 	}
 	
 	@GeneratedValue
@@ -51,6 +56,8 @@ public class PublicacionModel {
 	private int meGusta;
 
 	private Usuario autor; 
+	
+	private List<Foto> fotos;
 	
 	public long getIdPublicacion() {
 		return idPublicacion;
@@ -99,5 +106,13 @@ public class PublicacionModel {
 	public void setAutor(Usuario autor) {
 		this.autor = autor;
 	}
-	
+
+	public List<Foto> getFotos() {
+		return fotos;
+	}
+
+	public void setFotos(List<Foto> fotos) {
+		this.fotos = fotos;
+	}
+		
 }

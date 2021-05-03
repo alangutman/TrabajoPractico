@@ -28,7 +28,6 @@ public class PublicacionService {
 	@Qualifier("UsuarioRepository")
 	private UsuarioRepository usuarioRepository;
 	
-	
 	public boolean crear(Publicacion publicacion) {
 		try {
 			publicacionRepository.save(publicacion);

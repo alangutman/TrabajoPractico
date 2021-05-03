@@ -2,16 +2,23 @@ package com.RedSocial.core.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Table(name="Publicacion")
 @Entity
+@Table(name = "Publicacion")
 public class Publicacion implements Serializable{
 
 	/**
@@ -23,17 +30,19 @@ public class Publicacion implements Serializable{
 		
 	}
 	
-	public Publicacion(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta, Usuario autor) {
+	public Publicacion(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta,
+			Usuario autor, List<Foto> fotos) {
 		this.idPublicacion = idPublicacion;
 		this.titulo = titulo;
 		this.fechaDePublicacion = fechaDePublicacion;
 		this.descripcion = descripcion;
 		this.meGusta = meGusta;
 		this.autor = autor;
+		this.fotos = fotos;
 	}
 
-	@GeneratedValue
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="idPublicacion")
 	private long idPublicacion;
 	
@@ -51,6 +60,10 @@ public class Publicacion implements Serializable{
 
 	@ManyToOne
 	private Usuario autor; 
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_publicacion", referencedColumnName = "idPublicacion")
+	private List<Foto> fotos = new ArrayList<>(); 
 	
 	public long getIdPublicacion() {
 		return idPublicacion;
@@ -98,6 +111,14 @@ public class Publicacion implements Serializable{
 
 	public void setAutor(Usuario autor) {
 		this.autor = autor;
+	}
+
+	public List<Foto> getFotos() {
+		return fotos;
+	}
+
+	public void setFotos(List<Foto> fotos) {
+		this.fotos = fotos;
 	}
 	
 }

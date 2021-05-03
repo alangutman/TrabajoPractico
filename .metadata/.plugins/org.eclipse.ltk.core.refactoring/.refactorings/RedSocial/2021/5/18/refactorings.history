@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.RedSocial.core.entity.Publicacion.fotos&apos; in &apos;com.RedSocial.core.entity.Publicacion&apos;&#x0D;&#x0A;- Original project: &apos;RedSocial&apos;&#x0D;&#x0A;- Original element: &apos;com.RedSocial.core.entity.Publicacion.fotos&apos;&#x0D;&#x0A;- Getter method name: &apos;getFotos&apos;&#x0D;&#x0A;- Setter method name: &apos;setFotos&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;fotos&apos;" flags="589830" getter="getFotos" id="org.eclipse.jdt.ui.self.encapsulate" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.RedSocial.core.entity{Publicacion.java[Publicacion^fotos" insertion="13" setter="setFotos" stamp="1619979181531" version="1.0" visibility="1"/>
+</session>

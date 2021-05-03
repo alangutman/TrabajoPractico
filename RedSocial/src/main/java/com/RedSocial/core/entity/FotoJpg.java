@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-@JsonTypeName("FotoJpg")
+@JsonTypeName("JPG")
 @Entity
 public class FotoJpg extends Foto {
 
