@@ -1,5 +1,8 @@
 package com.RedSocial.core.model;
 
+import java.util.List;
+
+import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.entity.Usuario;
 
 public class UsuarioModel {
@@ -13,19 +16,22 @@ public class UsuarioModel {
 		this.apodo = usuario.getApodo();
 		this.email = usuario.getEmail();
 		this.contrasenia = usuario.getContrasenia();
+//		this.publicaciones = usuario.getPublicaciones();
 	}
 	
-	public UsuarioModel(long idUsuario, String apodo, String email, String contrasenia) { 
+	public UsuarioModel(long idUsuario, String apodo, String email, String contrasenia) { //, List<Publicacion> publicaciones) {
 		this.idUsuario = idUsuario;
 		this.apodo = apodo;
 		this.email = email;
 		this.contrasenia = contrasenia;
+//		this.publicaciones = publicaciones;
 	}
 	
 	private long idUsuario;
 	private String apodo;
 	private String email;
 	private String contrasenia;
+//	private List<Publicacion> publicaciones;
 	
 	public long getIdUsuario() {
 		return idUsuario;
@@ -51,5 +57,13 @@ public class UsuarioModel {
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
 	}
+
+//	public List<Publicacion> getPublicaciones() {
+//		return publicaciones;
+//	}
+
+//	public void setPublicaciones(List<Publicacion> publicaciones) {
+//		this.publicaciones = publicaciones;
+//	}
 	
 }
