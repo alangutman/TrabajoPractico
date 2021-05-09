@@ -58,7 +58,7 @@ public class Publicacion implements Serializable{
 	@Column(name="meGusta")
 	private int meGusta;
 
-	@ManyToOne
+	@ManyToOne()
 	private Usuario autor; 
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
