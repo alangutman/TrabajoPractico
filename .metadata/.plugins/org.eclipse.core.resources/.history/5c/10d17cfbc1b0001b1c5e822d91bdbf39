@@ -75,7 +75,6 @@ public class Publicacion implements Serializable{
 			   fetch = FetchType.EAGER, 
 			   mappedBy = "publicacion")
 	@OrderColumn(name = "idComentario")
-	@JsonIgnoreProperties("publicacion")
 	private List<Comentario> comentarios = new ArrayList<>(); 
 	
 	public long getIdPublicacion() {

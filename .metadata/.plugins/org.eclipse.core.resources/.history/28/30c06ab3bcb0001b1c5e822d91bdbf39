@@ -15,14 +15,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderColumn;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Publicacion")
-@JsonIgnoreProperties()
 public class Publicacion implements Serializable{
 
 	/**
@@ -72,10 +68,8 @@ public class Publicacion implements Serializable{
 	private List<Foto> fotos = new ArrayList<>(); 
 	
 	@OneToMany(cascade = CascadeType.ALL, 
-			   fetch = FetchType.EAGER, 
+			   fetch = FetchType.LAZY, 
 			   mappedBy = "publicacion")
-	@OrderColumn(name = "idComentario")
-	@JsonIgnoreProperties("publicacion")
 	private List<Comentario> comentarios = new ArrayList<>(); 
 	
 	public long getIdPublicacion() {
@@ -133,14 +127,5 @@ public class Publicacion implements Serializable{
 	public void setFotos(List<Foto> fotos) {
 		this.fotos = fotos;
 	}
-	
-	public List<Comentario> getComentarios() {
-		return comentarios;
-	}
-
-	public void setComentarios(List<Comentario> comentarios) {
-		this.comentarios = comentarios;
-	}
-	
 	
 }

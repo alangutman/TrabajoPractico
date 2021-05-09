@@ -15,14 +15,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderColumn;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Publicacion")
-@JsonIgnoreProperties()
 public class Publicacion implements Serializable{
 
 	/**
@@ -35,7 +31,7 @@ public class Publicacion implements Serializable{
 	}
 	
 	public Publicacion(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta,
-			Usuario autor, List<Foto> fotos, List<Comentario> comentarios) {
+			Usuario autor, List<Foto> fotos) {
 		this.idPublicacion = idPublicacion;
 		this.titulo = titulo;
 		this.fechaDePublicacion = fechaDePublicacion;
@@ -43,7 +39,6 @@ public class Publicacion implements Serializable{
 		this.meGusta = meGusta;
 		this.autor = autor;
 		this.fotos = fotos;
-		this.comentarios = comentarios;
 	}
 
 	@Id
@@ -66,17 +61,9 @@ public class Publicacion implements Serializable{
 	@ManyToOne()
 	private Usuario autor; 
 
-	@OneToMany(cascade = CascadeType.ALL, 
-			   fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_publicacion", referencedColumnName = "idPublicacion")
 	private List<Foto> fotos = new ArrayList<>(); 
-	
-	@OneToMany(cascade = CascadeType.ALL, 
-			   fetch = FetchType.EAGER, 
-			   mappedBy = "publicacion")
-	@OrderColumn(name = "idComentario")
-	@JsonIgnoreProperties("publicacion")
-	private List<Comentario> comentarios = new ArrayList<>(); 
 	
 	public long getIdPublicacion() {
 		return idPublicacion;
@@ -133,14 +120,5 @@ public class Publicacion implements Serializable{
 	public void setFotos(List<Foto> fotos) {
 		this.fotos = fotos;
 	}
-	
-	public List<Comentario> getComentarios() {
-		return comentarios;
-	}
-
-	public void setComentarios(List<Comentario> comentarios) {
-		this.comentarios = comentarios;
-	}
-	
 	
 }

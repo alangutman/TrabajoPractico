@@ -1,40 +1,21 @@
-package com.RedSocial.core.entity;
+package com.RedSocial.core.model;
 
-import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderColumn;
-import javax.persistence.Table;
+import com.RedSocial.core.entity.Comentario;
+import com.RedSocial.core.entity.Foto;
+import com.RedSocial.core.entity.Publicacion;
+import com.RedSocial.core.entity.Usuario;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+public class PublicacionModel {
 
-@Entity
-@Table(name = "Publicacion")
-@JsonIgnoreProperties()
-public class Publicacion implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	public Publicacion() {
+	public PublicacionModel() {
 		
 	}
 	
-	public Publicacion(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta,
+	public PublicacionModel(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta,
 			Usuario autor, List<Foto> fotos, List<Comentario> comentarios) {
 		this.idPublicacion = idPublicacion;
 		this.titulo = titulo;
@@ -46,37 +27,25 @@ public class Publicacion implements Serializable{
 		this.comentarios = comentarios;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idPublicacion")
+	public PublicacionModel(Publicacion publicacion) {
+		this.idPublicacion = publicacion.getIdPublicacion();
+		this.titulo = publicacion.getTitulo();
+		this.fechaDePublicacion = publicacion.getFechaDePublicacion();
+		this.descripcion = publicacion.getDescripcion();
+		this.meGusta = publicacion.getMeGusta();
+		this.autor = publicacion.getAutor();
+		this.fotos = publicacion.getFotos();
+		this.comentarios = publicacion.getComentarios();
+	}
+	
 	private long idPublicacion;
-	
-	@Column(name="titulo")
 	private String titulo;
-	
-	@Column(name="fechaDePublicacion")
 	private Date fechaDePublicacion;
-	
-	@Column(name="descripcion")
 	private String descripcion;
-
-	@Column(name="meGusta")
 	private int meGusta;
-
-	@ManyToOne()
 	private Usuario autor; 
-
-	@OneToMany(cascade = CascadeType.ALL, 
-			   fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_publicacion", referencedColumnName = "idPublicacion")
-	private List<Foto> fotos = new ArrayList<>(); 
-	
-	@OneToMany(cascade = CascadeType.ALL, 
-			   fetch = FetchType.EAGER, 
-			   mappedBy = "publicacion")
-	@OrderColumn(name = "idComentario")
-	@JsonIgnoreProperties("publicacion")
-	private List<Comentario> comentarios = new ArrayList<>(); 
+	private List<Foto> fotos;
+	private List<Comentario> comentarios; 
 	
 	public long getIdPublicacion() {
 		return idPublicacion;
@@ -133,7 +102,7 @@ public class Publicacion implements Serializable{
 	public void setFotos(List<Foto> fotos) {
 		this.fotos = fotos;
 	}
-	
+
 	public List<Comentario> getComentarios() {
 		return comentarios;
 	}
@@ -143,4 +112,5 @@ public class Publicacion implements Serializable{
 	}
 	
 	
+		
 }

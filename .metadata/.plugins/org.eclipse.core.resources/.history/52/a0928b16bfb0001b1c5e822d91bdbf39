@@ -18,11 +18,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "Publicacion")
-@JsonIgnoreProperties()
 public class Publicacion implements Serializable{
 
 	/**
@@ -75,7 +72,6 @@ public class Publicacion implements Serializable{
 			   fetch = FetchType.EAGER, 
 			   mappedBy = "publicacion")
 	@OrderColumn(name = "idComentario")
-	@JsonIgnoreProperties("publicacion")
 	private List<Comentario> comentarios = new ArrayList<>(); 
 	
 	public long getIdPublicacion() {
