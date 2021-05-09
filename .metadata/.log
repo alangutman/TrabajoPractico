@@ -12876,3 +12876,18 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.ui 2 2 2021-05-09 16:24:40.044
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-09 17:43:48.972
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sShstEdS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-09 17:43:48.972
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.sShstEdS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-09 17:43:48.973
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-09 17:43:48.974
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sShstEdS => OK
+
+!ENTRY org.eclipse.core.jobs 2 2 2021-05-09 17:43:51.077
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.springframework.ide.eclipse.boot.launch.console.BootConsolePageParticipant$TerminateProcessAction$1
