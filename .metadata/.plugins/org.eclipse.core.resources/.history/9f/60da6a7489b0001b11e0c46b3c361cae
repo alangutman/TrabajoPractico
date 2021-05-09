@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.RedSocial.core.converter.ComentarioConverter;
 import com.RedSocial.core.entity.Comentario;
+import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.model.ComentarioModel;
 import com.RedSocial.core.repository.ComentarioRepository;
 

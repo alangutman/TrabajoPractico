@@ -45,9 +45,4 @@ public class ComentarioController {
 	public List<ComentarioModel> obtener(){
 		return comentarioService.obtener();
 	}
-	
-	@PostMapping("/comentario/meGusta/{idComentario}")
-	public boolean meGusta(@PathVariable("idComentario") long idComentario) {
-		return comentarioService.meGusta(idComentario);
-	}
 }

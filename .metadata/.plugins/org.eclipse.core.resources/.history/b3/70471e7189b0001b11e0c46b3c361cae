@@ -57,14 +57,4 @@ public class ComentarioService {
 		return comentarioConverter.convertir(comentarioRepository.findAll());
 	}
 
-	public boolean meGusta(long idComentario) {
-		try {
-			Comentario comentario = comentarioRepository.findByIdComentario(idComentario);
-			comentario.setMeGusta(comentario.getMeGusta() + 1);
-			comentarioRepository.save(comentario);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
-	}
 }
