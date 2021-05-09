@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.RedSocial.core.converter.ComentarioConverter;
 import com.RedSocial.core.entity.Comentario;
-import com.RedSocial.core.model.ComentarioModel;
 import com.RedSocial.core.repository.ComentarioRepository;
 
 @Service("ComentarioService")
@@ -17,10 +15,6 @@ public class ComentarioService {
 	@Autowired
 	@Qualifier("ComentarioRepository")
 	private ComentarioRepository comentarioRepository;
-	
-	@Autowired
-	@Qualifier("ComentarioConverter")
-	private ComentarioConverter comentarioConverter;
 	
 	public boolean crear(Comentario comentario) {
 		try {
@@ -53,8 +47,8 @@ public class ComentarioService {
 		}
 	}
 	
-	public List<ComentarioModel> obtener(){
-		return comentarioConverter.convertir(comentarioRepository.findAll());
+	public List<Comentario> obtener(){
+		return comentarioRepository.findAll();
 	}
 
 	public boolean meGusta(long idComentario) {

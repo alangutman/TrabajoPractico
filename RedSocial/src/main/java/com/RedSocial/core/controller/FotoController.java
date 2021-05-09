@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Foto;
-import com.RedSocial.core.model.FotoModel;
 import com.RedSocial.core.service.FotoService;
 
 @RestController
@@ -42,7 +41,7 @@ public class FotoController {
 	}
 	
 	@GetMapping("/foto")
-	public List<FotoModel> obtener(){
+	public List<Foto> obtener(){
 		return fotoService.obtener();
 	}
 }

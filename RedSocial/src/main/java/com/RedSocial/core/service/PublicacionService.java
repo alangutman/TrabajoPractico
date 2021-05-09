@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.RedSocial.core.converter.PublicacionConverter;
 import com.RedSocial.core.entity.Publicacion;
-import com.RedSocial.core.model.PublicacionModel;
 import com.RedSocial.core.repository.PublicacionRepository;
 import com.RedSocial.core.repository.UsuarioRepository;
 
@@ -20,10 +18,6 @@ public class PublicacionService {
 	@Qualifier("PublicacionRepository")
 	private PublicacionRepository publicacionRepository;
 	
-	@Autowired
-	@Qualifier("PublicacionConverter")
-	private PublicacionConverter publicacionConverter;
-
 	@Autowired
 	@Qualifier("UsuarioRepository")
 	private UsuarioRepository usuarioRepository;
@@ -59,14 +53,10 @@ public class PublicacionService {
 		}
 	}
 	
-	public List<PublicacionModel> obtener(){
-		return publicacionConverter.convertir(publicacionRepository.findAll());
+	public List<Publicacion> obtener(){
+		return publicacionRepository.findAll();
 	}
-	
-	public PublicacionModel obtenerPorTitulo(String titulo){
-		return new PublicacionModel(publicacionRepository.findByTitulo(titulo));
-	}
-	
+		
 	public boolean meGusta(long idPublicacion) {
 		try {
 			Publicacion publicacion = publicacionRepository.findByIdPublicacion(idPublicacion);

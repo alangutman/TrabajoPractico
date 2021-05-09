@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Usuario;
-import com.RedSocial.core.model.UsuarioModel;
 import com.RedSocial.core.service.UsuarioService;
 
 @RestController
@@ -42,7 +41,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/usuario")
-	public List<UsuarioModel> obtener(){
+	public List<Usuario> obtener(){
 		return usuarioService.obtener();
 	}
 }

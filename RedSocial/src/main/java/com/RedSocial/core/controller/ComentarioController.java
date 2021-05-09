@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Comentario;
-import com.RedSocial.core.model.ComentarioModel;
 import com.RedSocial.core.service.ComentarioService;
 
 @RestController
@@ -42,7 +41,7 @@ public class ComentarioController {
 	}
 	
 	@GetMapping("/comentario")
-	public List<ComentarioModel> obtener(){
+	public List<Comentario> obtener(){
 		return comentarioService.obtener();
 	}
 	

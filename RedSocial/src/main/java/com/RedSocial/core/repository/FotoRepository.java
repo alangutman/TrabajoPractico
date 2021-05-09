@@ -9,6 +9,5 @@ import com.RedSocial.core.entity.Foto;
 
 @Repository("FotoRepository")
 public interface FotoRepository extends JpaRepository<Foto, Serializable>{
-	public abstract Foto findByNombre(String nombre);
 	public abstract Foto findByIdFoto(long idFoto);
 }

@@ -8,6 +8,5 @@ import com.RedSocial.core.entity.Usuario;
 
 @Repository("UsuarioRepository")
 public interface UsuarioRepository extends JpaRepository<Usuario, Serializable>{
-	public abstract Usuario findByApodo(String apodo);
 	public abstract Usuario findByIdUsuario(long idUsuario);
 }

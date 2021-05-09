@@ -9,6 +9,5 @@ import com.RedSocial.core.entity.Publicacion;
 
 @Repository("PublicacionRepository")
 public interface PublicacionRepository extends JpaRepository<Publicacion, Serializable>{
-	public abstract Publicacion findByTitulo(String titulo);
 	public abstract Publicacion findByIdPublicacion(long idPublicacion);
 }

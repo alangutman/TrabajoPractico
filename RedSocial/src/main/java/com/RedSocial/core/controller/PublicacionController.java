@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Publicacion;
-import com.RedSocial.core.model.PublicacionModel;
 import com.RedSocial.core.service.PublicacionService;
 
 @RestController
@@ -42,7 +41,7 @@ public class PublicacionController {
 	}
 	
 	@GetMapping("/publicacion")
-	public List<PublicacionModel> obtener(){
+	public List<Publicacion> obtener(){
 		return publicacionService.obtener();
 	}
 	
