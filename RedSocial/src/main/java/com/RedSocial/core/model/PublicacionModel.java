@@ -3,10 +3,6 @@ package com.RedSocial.core.model;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 import com.RedSocial.core.entity.Foto;
 import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.entity.Usuario;
@@ -38,25 +34,12 @@ public class PublicacionModel {
 		this.fotos = publicacion.getFotos();
 	}
 	
-	@GeneratedValue
-	@Id
-	@Column(name="idPublicacion")
 	private long idPublicacion;
-	
-	@Column(name="titulo")
 	private String titulo;
-	
-	@Column(name="fechaDePublicacion")
 	private Date fechaDePublicacion;
-	
-	@Column(name="descripcion")
 	private String descripcion;
-
-	@Column(name="meGusta")
 	private int meGusta;
-
 	private Usuario autor; 
-	
 	private List<Foto> fotos;
 	
 	public long getIdPublicacion() {

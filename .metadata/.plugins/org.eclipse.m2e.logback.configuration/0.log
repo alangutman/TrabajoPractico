@@ -3149,3 +3149,160 @@
 2021-05-09 02:43:17,725 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2021-05-09 02:43:17,728 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-05-09 02:43:17,728 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 02:48:39,100 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-05-09 02:50:43,373 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:50:43,378 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 02:50:43,395 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 02:50:43,399 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:50:43,399 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 02:53:10,226 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:53:10,230 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 02:53:10,233 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 02:53:10,236 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:53:10,237 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 02:53:19,190 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:53:19,192 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 02:53:19,195 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 02:53:19,198 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:53:19,198 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 02:59:26,290 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:59:26,294 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 02:59:26,297 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 02:59:26,299 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 02:59:26,300 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:01:37,847 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:01:37,848 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:01:37,851 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:01:37,854 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:01:37,854 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:02:32,999 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:02:33,000 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:02:33,004 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:02:33,007 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:02:33,007 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:03:05,102 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:03:05,104 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:03:05,107 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:03:05,109 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:03:05,110 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:07:22,598 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:07:22,600 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:07:22,603 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:07:22,608 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:07:22,608 [Worker-16: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:10:38,358 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:10:38,360 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:10:38,363 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:10:38,372 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:10:38,372 [Worker-15: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:13:57,995 [Worker-20: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:13:57,997 [Worker-20: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:13:57,999 [Worker-20: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:13:58,002 [Worker-20: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:13:58,003 [Worker-20: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:16:10,647 [Worker-23: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:16:10,649 [Worker-23: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:16:10,652 [Worker-23: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:16:10,655 [Worker-23: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:16:10,655 [Worker-23: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:21:50,118 [Worker-27: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:21:50,119 [Worker-27: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:21:50,122 [Worker-27: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:21:50,125 [Worker-27: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:21:50,125 [Worker-27: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:25:05,834 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:25:05,841 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:25:05,846 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:25:05,849 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:25:05,850 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:29:30,419 [Worker-33: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:29:30,421 [Worker-33: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:29:30,424 [Worker-33: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:29:30,426 [Worker-33: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:29:30,427 [Worker-33: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:30:18,550 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:30:18,552 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:30:18,554 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:30:18,557 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:30:18,557 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:35:31,540 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-05-09 03:39:02,466 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:39:02,473 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:39:02,492 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:39:02,497 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:39:02,498 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:40:20,577 [Worker-6: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:40:20,587 [Worker-6: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:40:20,590 [Worker-6: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:40:20,594 [Worker-6: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:40:20,595 [Worker-6: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:41:21,334 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:41:21,336 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:41:21,339 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:41:21,342 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:41:21,342 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:41:33,377 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:41:33,379 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:41:33,381 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:41:33,384 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:41:33,384 [Worker-2: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:42:21,907 [Worker-5: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:42:21,908 [Worker-5: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:42:21,911 [Worker-5: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:42:21,914 [Worker-5: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:42:21,914 [Worker-5: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:49:15,007 [Worker-1: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:49:15,009 [Worker-1: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:49:15,012 [Worker-1: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:49:15,015 [Worker-1: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:49:15,016 [Worker-1: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:49:54,997 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:49:54,999 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:49:55,002 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:49:55,005 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:49:55,005 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:50:42,778 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:50:42,780 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:50:42,786 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:50:42,790 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:50:42,791 [Worker-7: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:51:49,075 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:51:49,077 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:51:49,080 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:51:49,084 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:51:49,085 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:53:02,114 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:53:02,116 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:53:02,120 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:53:02,123 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:53:02,123 [Worker-4: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:53:36,186 [Worker-9: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:53:36,187 [Worker-9: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:53:36,190 [Worker-9: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:53:36,193 [Worker-9: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:53:36,193 [Worker-9: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:54:53,911 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:54:53,913 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:54:53,916 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:54:53,919 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:54:53,920 [Worker-10: Launching RedSocial - RedSocialApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:56:25,708 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:56:25,710 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:56:25,712 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:56:25,715 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:56:25,715 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:56:57,986 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:56:57,988 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:56:57,991 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:56:57,993 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:56:57,994 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:57:31,319 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:57:31,321 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:57:31,323 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:57:31,326 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:57:31,327 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources
+2021-05-09 03:58:19,413 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:58:19,414 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-09 03:58:19,417 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-09 03:58:19,420 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-09 03:58:19,421 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alan\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\RedSocial\src\test\resources

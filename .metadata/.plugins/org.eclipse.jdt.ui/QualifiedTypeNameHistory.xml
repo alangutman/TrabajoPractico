@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
-    <fullyQualifiedTypeName name="javax.persistence.Id"/>
     <fullyQualifiedTypeName name="javax.persistence.Column"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
@@ -20,7 +19,6 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="com.RedSocial.core.entity.Usuario"/>
     <fullyQualifiedTypeName name="com.RedSocial.core.model.PublicacionModel"/>
-    <fullyQualifiedTypeName name="org.hibernate.annotations.FetchMode"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.persistence.InheritanceType"/>
@@ -34,4 +32,6 @@
     <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
     <fullyQualifiedTypeName name="com.RedSocial.core.entity.Sugerencia"/>
     <fullyQualifiedTypeName name="com.RedSocial.core.entity.Publicacion"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.FetchMode"/>
 </qualifiedTypeNameHistroy>
