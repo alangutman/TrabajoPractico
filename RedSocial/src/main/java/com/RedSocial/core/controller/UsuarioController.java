@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.RedSocial.core.Exception.EntityAlreadyExistsException;
+import com.RedSocial.core.Exception.EntityNotFoundException;
+import com.RedSocial.core.Exception.InformationRequiredException;
 import com.RedSocial.core.entity.Usuario;
 import com.RedSocial.core.service.UsuarioService;
 
@@ -26,22 +31,93 @@ public class UsuarioController {
 	UsuarioService usuarioService;
 	
 	@PutMapping("/usuario")
-	public boolean crear(@RequestBody @Validated Usuario usuario) {
-		return usuarioService.crear(usuario);
+	public ResponseEntity<Object> crear(@RequestBody @Validated Usuario usuario) {
+		try {			
+			usuarioService.crear(usuario);
+		}
+		catch(EntityAlreadyExistsException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+	
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body("Usuario creado exitosamente.");
 	}
 	
 	@PostMapping("/usuario")
-	public boolean actualizar(@RequestBody @Validated Usuario usuario) {
-		return usuarioService.actualizar(usuario);
+	public ResponseEntity<Object> actualizar(@RequestBody @Validated Usuario usuario) {
+		try {
+			usuarioService.actualizar(usuario);			
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+		
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body("Usuario actualizado exitosamente.");
 	}
 	
 	@DeleteMapping("/usuario/{idUsuario}")
-	public boolean borrar(@PathVariable("idUsuario") long idUsuario) {
-		return usuarioService.borrar(idUsuario);
+	public ResponseEntity<Object> borrar(@PathVariable("idUsuario") long idUsuario) {
+		try {
+			usuarioService.borrar(idUsuario);			
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+		
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body("Usuario borrado exitosamente.");
 	}
+	
+	@GetMapping("/usuario/{idUsuario}")
+	public ResponseEntity<Object> obtenerUsuario(@PathVariable("idUsuario") long idUsuario) {
+		try {
+			Usuario usuario = usuarioService.obtenerUsuario(idUsuario);
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(usuario);
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+
+	}
+	
 	
 	@GetMapping("/usuario")
 	public List<Usuario> obtener(){
 		return usuarioService.obtener();
 	}
+	
 }
