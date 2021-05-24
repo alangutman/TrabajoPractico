@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.RedSocial.core.Exception.EntityNotFoundException;
+import com.RedSocial.core.Exception.InformationRequiredException;
 import com.RedSocial.core.entity.Publicacion;
+import com.RedSocial.core.entity.Usuario;
 import com.RedSocial.core.repository.PublicacionRepository;
-import com.RedSocial.core.repository.UsuarioRepository;
 
 @Service("PublicacionService")
 public class PublicacionService {
@@ -19,38 +21,59 @@ public class PublicacionService {
 	private PublicacionRepository publicacionRepository;
 	
 	@Autowired
-	@Qualifier("UsuarioRepository")
-	private UsuarioRepository usuarioRepository;
+	@Qualifier("UsuarioService")
+	private UsuarioService usuarioService;
 	
-	public boolean crear(Publicacion publicacion) {
-		try {
-			publicacionRepository.save(publicacion);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
+	public boolean crear(Publicacion publicacion) throws InformationRequiredException, EntityNotFoundException {
+		
+		if(Objects.isNull(publicacion.getTitulo()))
+			throw new InformationRequiredException("Debe ingresar un Título.");
+		
+		if(Objects.isNull(publicacion.getDescripcion()))
+			throw new InformationRequiredException("Debe ingresar una Descripción.");
+		
+		Usuario autor = usuarioService.buscar(publicacion.getAutor().getIdUsuario());	
+		publicacion.setAutor(autor);
+		
+		publicacionRepository.save(publicacion);
+		
+		return true;
+
 	}
 		
-	public boolean actualizar(Publicacion publicacion) {
-		try {
-			if (publicacion.getIdPublicacion() == 0 || Objects.isNull(publicacion.getIdPublicacion()))
-				return false; 
+	public boolean actualizar(Publicacion publicacion) throws InformationRequiredException, EntityNotFoundException {
+
+		if (Objects.isNull(publicacion.getIdPublicacion()))
+			throw new InformationRequiredException("Debe ingresar el ID de la publicación a actualizar"); 
 		
-			publicacionRepository.save(publicacion);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
+		if(publicacionRepository.findByIdPublicacion(publicacion.getIdPublicacion()) == null) 
+			throw new EntityNotFoundException("No fue posible actualizar la publicación ya que la publicación no fue encontrada.");
+			
+		if(Objects.isNull(publicacion.getTitulo()))
+			throw new InformationRequiredException("Debe ingresar un Título.");
+		
+		if(Objects.isNull(publicacion.getDescripcion()))
+			throw new InformationRequiredException("Debe ingresar una Descripción.");
+		
+		publicacionRepository.save(publicacion);
+
+		return true;
+
 	}
 	
-	public boolean borrar(long idPublicacion) {
-		try {
-			Publicacion publicacion = publicacionRepository.findByIdPublicacion(idPublicacion);
-			publicacionRepository.delete(publicacion);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
+	public boolean borrar(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
+
+		if (Objects.isNull(idPublicacion) || idPublicacion == 0)
+			throw new InformationRequiredException("Debe ingresar el ID de la publicación a borrar"); 
+		
+		if(publicacionRepository.findByIdPublicacion(idPublicacion) == null) 
+			throw new EntityNotFoundException("No fue posible borrar la publicación ya que la publicación no fue encontrada.");		
+		
+		Publicacion publicacion = publicacionRepository.findByIdPublicacion(idPublicacion);
+		publicacionRepository.delete(publicacion);
+
+		return true;
+		
 	}
 	
 	public List<Publicacion> obtener(){
@@ -58,13 +81,18 @@ public class PublicacionService {
 	}
 		
 	public boolean meGusta(long idPublicacion) {
-		try {
-			Publicacion publicacion = publicacionRepository.findByIdPublicacion(idPublicacion);
-			publicacion.setMeGusta(publicacion.getMeGusta() + 1);
-			publicacionRepository.save(publicacion);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
+		
+		if (Objects.isNull(idPublicacion) || idPublicacion == 0)
+			throw new InformationRequiredException("Debe ingresar el ID de la publicación sobre la que quiere dar me gusta."); 
+		
+		if(publicacionRepository.findByIdPublicacion(idPublicacion) == null) 
+			throw new EntityNotFoundException("No fue posible dar me gusta a la publicación ya que la publicación no fue encontrada.");
+		
+		Publicacion publicacion = publicacionRepository.findByIdPublicacion(idPublicacion);
+		publicacion.setMeGusta(publicacion.getMeGusta() + 1);
+
+		publicacionRepository.save(publicacion);
+		
+		return true;
 	}
 }

@@ -32,6 +32,7 @@ public class UsuarioController {
 	
 	@PutMapping("/usuario")
 	public ResponseEntity<Object> crear(@RequestBody @Validated Usuario usuario) {
+	
 		try {			
 			usuarioService.crear(usuario);
 		}
@@ -94,9 +95,9 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/usuario/{idUsuario}")
-	public ResponseEntity<Object> obtenerUsuario(@PathVariable("idUsuario") long idUsuario) {
+	public ResponseEntity<Object> buscar(@PathVariable("idUsuario") long idUsuario) {
 		try {
-			Usuario usuario = usuarioService.obtenerUsuario(idUsuario);
+			Usuario usuario = usuarioService.buscar(idUsuario);
 			return ResponseEntity
 					.status(HttpStatus.OK)
 					.body(usuario);

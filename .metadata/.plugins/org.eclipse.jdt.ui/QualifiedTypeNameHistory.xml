@@ -39,4 +39,5 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="com.RedSocial.core.Exception.InformationRequiredException"/>
     <fullyQualifiedTypeName name="com.RedSocial.core.Exception.EntityNotFoundException"/>
+    <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
 </qualifiedTypeNameHistroy>

@@ -15,6 +15,7 @@ import com.RedSocial.core.repository.UsuarioRepository;
 
 @Service("UsuarioService")
 public class UsuarioService {
+	
 	@Autowired
 	@Qualifier("UsuarioRepository")
 	private UsuarioRepository usuarioRepository;
@@ -41,7 +42,7 @@ public class UsuarioService {
 	public boolean actualizar(Usuario usuario) throws InformationRequiredException, EntityNotFoundException {
 			
 			if (Objects.isNull(usuario.getIdUsuario()))
-				throw new InformationRequiredException("Debe ingresar un ID de usuario a actualizar"); 
+				throw new InformationRequiredException("Debe ingresar el ID de usuario a actualizar"); 
 			
 			if(usuarioRepository.findByIdUsuario(usuario.getIdUsuario()) == null) 
 				throw new EntityNotFoundException("No fue posible actualizar el usuario ya que el usuario no fue encontrado.");
@@ -54,7 +55,7 @@ public class UsuarioService {
 	public boolean borrar(long idUsuario) throws InformationRequiredException, EntityNotFoundException {
 
 		if (Objects.isNull(idUsuario) || idUsuario == 0)
-			throw new InformationRequiredException("Debe ingresar un ID de usuario a eliminar"); 
+			throw new InformationRequiredException("Debe ingresar el ID de usuario a eliminar"); 
 		
 		if(usuarioRepository.findByIdUsuario(idUsuario) == null) 
 			throw new EntityNotFoundException("No fue posible eliminar el usuario ya que el usuario no fue encontrado.");
@@ -65,10 +66,10 @@ public class UsuarioService {
 			return true;
 	}
 	
-	public Usuario obtenerUsuario(long idUsuario) throws InformationRequiredException, EntityNotFoundException {
+	public Usuario buscar(long idUsuario) throws InformationRequiredException, EntityNotFoundException {
 		
 		if (Objects.isNull(idUsuario) || idUsuario == 0)
-			throw new InformationRequiredException("Debe ingresar un ID de usuario válido"); 
+			throw new InformationRequiredException("Debe ingresar el ID de usuario válido"); 
 		
 		if(usuarioRepository.findByIdUsuario(idUsuario) == null) 
 			throw new EntityNotFoundException("No fue posible retornar el usuario ya que el usuario no fue encontrado.");

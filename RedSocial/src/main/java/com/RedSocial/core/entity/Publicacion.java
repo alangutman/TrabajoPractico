@@ -18,6 +18,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -34,11 +37,12 @@ public class Publicacion implements Serializable{
 		
 	}
 	
-	public Publicacion(long idPublicacion, String titulo, Date fechaDePublicacion, String descripcion, int meGusta,
-			Usuario autor, List<Foto> fotos, List<Comentario> comentarios) {
+	public Publicacion(long idPublicacion, String titulo, Date fechaDePublicacion, Date fechaDeUltimaActualizacion,
+			String descripcion, int meGusta, Usuario autor, List<Foto> fotos, List<Comentario> comentarios) {
 		this.idPublicacion = idPublicacion;
 		this.titulo = titulo;
 		this.fechaDePublicacion = fechaDePublicacion;
+		this.fechaDeUltimaActualizacion = fechaDeUltimaActualizacion;  
 		this.descripcion = descripcion;
 		this.meGusta = meGusta;
 		this.autor = autor;
@@ -54,8 +58,13 @@ public class Publicacion implements Serializable{
 	@Column(name="titulo")
 	private String titulo;
 	
-	@Column(name="fechaDePublicacion")
+    @CreationTimestamp
+    @Column(name="fechaDePublicacion")
 	private Date fechaDePublicacion;
+    
+    @UpdateTimestamp
+    @Column(name="fechaDeUltimaActualizacion")
+	private Date fechaDeUltimaActualizacion;
 	
 	@Column(name="descripcion")
 	private String descripcion;
@@ -100,6 +109,14 @@ public class Publicacion implements Serializable{
 
 	public void setFechaDePublicacion(Date fechaDePublicacion) {
 		this.fechaDePublicacion = fechaDePublicacion;
+	}
+	
+	public Date getFechaDeUltimaActualizacion() {
+		return fechaDeUltimaActualizacion;
+	}
+
+	public void setFechaDeUltimaActualizacion(Date fechaDeUltimaActualizacion) {
+		this.fechaDeUltimaActualizacion = fechaDeUltimaActualizacion;
 	}
 
 	public String getDescripcion() {
