@@ -29,13 +29,13 @@ public class PublicacionService {
 		/*
 		 * 1. Valida que se haya ingresado un título.
 		 */  
-			if(Objects.isNull(publicacion.getTitulo()) || Objects.equals("", publicacion.getTitulo()))
+			if(Objects.isNull(publicacion.getTitulo()))
 				throw new InformationRequiredException("Debe ingresar un Título.");
 		
 		/*
 		 * 2. Valida que se haya ingresado una descripción.
 		 */  
-			if(Objects.isNull(publicacion.getDescripcion()) || Objects.equals("", publicacion.getDescripcion()))
+			if(Objects.isNull(publicacion.getDescripcion()))
 				throw new InformationRequiredException("Debe ingresar una Descripción.");
 		
 		/*
@@ -62,28 +62,22 @@ public class PublicacionService {
 		/*
 		 * 1. Valida que la publicación exista.
 		 */ 
-			Publicacion publicacionOriginal = buscar(publicacion.getIdPublicacion());
+			buscar(publicacion.getIdPublicacion());
 			
 		/*
 		 * 2. Valida que se haya ingresado un título.
 		 */  
-			if(Objects.isNull(publicacion.getTitulo()) || Objects.equals("", publicacion.getTitulo()))
+			if(Objects.isNull(publicacion.getTitulo()))
 				throw new InformationRequiredException("Debe ingresar un Título.");
 		
 		/*
-		 * 3. Carga autor y la fecha de la publicación.
-		 */
-			publicacion.setAutor(publicacionOriginal.getAutor());
-			publicacion.setFechaDePublicacion(publicacionOriginal.getFechaDePublicacion());
-			
-		/*
-		 * 4. Valida que se haya ingresado una descripción.
+		 * 3. Valida que se haya ingresado una descripción.
 		 */  
-			if(Objects.isNull(publicacion.getDescripcion()) || Objects.equals("", publicacion.getDescripcion()))
+			if(Objects.isNull(publicacion.getDescripcion()))
 				throw new InformationRequiredException("Debe ingresar una Descripción.");
 
 		/*
-		 * 5. Actualiza la publicación.
+		 * 4. Actualiza la publicación.
 		 */ 
 			publicacionRepository.save(publicacion);
 

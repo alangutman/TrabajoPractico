@@ -123,26 +123,5 @@ public class ComentarioController {
 				.status(HttpStatus.OK)
 				.body("Me gusta dato exitosamente.");
 	}
-
-	@GetMapping("/comentario/{idComentario}")
-	public ResponseEntity<Object> buscar(@PathVariable("idComentario") long idComentario) {
-		try {
-			Comentario comentario = comentarioService.buscar(idComentario);
-			return ResponseEntity
-					.status(HttpStatus.OK)
-					.body(comentario);
-		}
-		catch(InformationRequiredException e) {
-			return ResponseEntity
-					.status(HttpStatus.BAD_REQUEST)
-					.body(e.getMessage());
-		}
-		catch(EntityNotFoundException e) {
-			return ResponseEntity
-					.status(HttpStatus.NOT_FOUND)
-					.body(e.getMessage());
-		}
-
-	}
 	
 }

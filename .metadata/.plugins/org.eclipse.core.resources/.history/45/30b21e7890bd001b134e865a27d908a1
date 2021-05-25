@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Comentario;
+import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.exception.EntityNotFoundException;
 import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.service.ComentarioService;

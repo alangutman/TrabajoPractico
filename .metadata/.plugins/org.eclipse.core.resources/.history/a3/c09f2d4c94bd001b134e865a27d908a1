@@ -80,7 +80,7 @@ public class ComentarioService {
 				throw new InformationRequiredException("Debe ingresar un comentario");
 			
 		/*
-		 * 3. Carga autor, publicación y fecha de publicación del comentario.
+		 * 3. Carga autor y publicación del comentario.
 		 */
 			comentario.setAutor(comentarioOriginal.getAutor());
 			comentario.setPublicacion(comentarioOriginal.getPublicacion());

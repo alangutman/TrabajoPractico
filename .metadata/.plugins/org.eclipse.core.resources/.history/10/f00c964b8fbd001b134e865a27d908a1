@@ -71,7 +71,7 @@ public class ComentarioService {
 		/*
 		 * 1. Valida que el comentario exista.
 		 */
-		Comentario comentarioOriginal =	buscar(comentario.getIdComentario());
+			buscar(comentario.getIdComentario());
 		
 		/*
 		 * 2. Valida que se haya ingresado un comentario.
@@ -80,14 +80,7 @@ public class ComentarioService {
 				throw new InformationRequiredException("Debe ingresar un comentario");
 			
 		/*
-		 * 3. Carga autor, publicación y fecha de publicación del comentario.
-		 */
-			comentario.setAutor(comentarioOriginal.getAutor());
-			comentario.setPublicacion(comentarioOriginal.getPublicacion());
-			comentario.setFechaDePublicacion(comentarioOriginal.getFechaDePublicacion());
-			
-		/*
-		 * 4. Actualiza el comentario.
+		 * 3. Actualiza el comentario.
 		 */
 			comentarioRepository.save(comentario);
 		

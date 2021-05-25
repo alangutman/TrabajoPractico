@@ -71,7 +71,7 @@ public class ComentarioService {
 		/*
 		 * 1. Valida que el comentario exista.
 		 */
-		Comentario comentarioOriginal =	buscar(comentario.getIdComentario());
+			buscar(comentario.getIdComentario());
 		
 		/*
 		 * 2. Valida que se haya ingresado un comentario.
@@ -80,14 +80,7 @@ public class ComentarioService {
 				throw new InformationRequiredException("Debe ingresar un comentario");
 			
 		/*
-		 * 3. Carga autor, publicación y fecha de publicación del comentario.
-		 */
-			comentario.setAutor(comentarioOriginal.getAutor());
-			comentario.setPublicacion(comentarioOriginal.getPublicacion());
-			comentario.setFechaDePublicacion(comentarioOriginal.getFechaDePublicacion());
-			
-		/*
-		 * 4. Actualiza el comentario.
+		 * 3. Actualiza el comentario.
 		 */
 			comentarioRepository.save(comentario);
 		
@@ -117,34 +110,34 @@ public class ComentarioService {
 
 	public boolean meGusta(long idComentario) {
 	
-			/*
-			 * 1. Valida que el comentario exista.
-			 */
-				Comentario comentario =	buscar(idComentario);
-			
-			/*
-			 * 2. Aumenta en 1 unidad la cantidad de me gusta.
-			 */ 
-				comentario.setMeGusta(comentario.getMeGusta() + 1);
-	
-			/*
-			 * 3. Actualiza el comentario.
-			 */
-				comentarioRepository.save(comentario);
-			
-			return true;
+		/*
+		 * 1. Valida que el comentario exista.
+		 */
+			Comentario comentario =	buscar(idComentario);
+		
+		/*
+		 * 2. Aumenta en 1 unidad la cantidad de me gusta.
+		 */ 
+			comentario.setMeGusta(comentario.getMeGusta() + 1);
+
+		/*
+		 * 3. Actualiza el comentario.
+		 */
+			comentarioRepository.save(comentario);
+		
+		return true;
 
 	}
 	
 	public Comentario buscar(long idComentario) throws InformationRequiredException, EntityNotFoundException {
 		
-			if (Objects.isNull(idComentario) || idComentario == 0)
-				throw new InformationRequiredException("Debe ingresar el ID de Comentario válido"); 
-			
-			if(comentarioRepository.findByIdComentario(idComentario) == null) 
-				throw new EntityNotFoundException("No fue posible retornar el comentario ya que el comentario no fue encontrado.");
-	
-		return comentarioRepository.findByIdComentario(idComentario);
+		if (Objects.isNull(idComentario) || idComentario == 0)
+			throw new InformationRequiredException("Debe ingresar el ID de Comentario válido"); 
+		
+		if(comentarioRepository.findByIdComentario(idComentario) == null) 
+			throw new EntityNotFoundException("No fue posible retornar el comentario ya que el comentario no fue encontrado.");
+
+			return comentarioRepository.findByIdComentario(idComentario);
 	}
 	
 }

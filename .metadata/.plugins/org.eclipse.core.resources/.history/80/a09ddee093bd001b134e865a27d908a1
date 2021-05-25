@@ -71,10 +71,9 @@ public class PublicacionService {
 				throw new InformationRequiredException("Debe ingresar un Título.");
 		
 		/*
-		 * 3. Carga autor y la fecha de la publicación.
+		 * 3. Carga autor de la publicación.
 		 */
 			publicacion.setAutor(publicacionOriginal.getAutor());
-			publicacion.setFechaDePublicacion(publicacionOriginal.getFechaDePublicacion());
 			
 		/*
 		 * 4. Valida que se haya ingresado una descripción.
