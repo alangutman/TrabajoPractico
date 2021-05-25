@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.RedSocial.core.Exception&apos; to &apos;com.RedSocial.core.exception&apos;&#x0D;&#x0A;- Original project: &apos;RedSocial&apos;&#x0D;&#x0A;- Original element: &apos;RedSocial/src/main/java/com.RedSocial.core.Exception&apos;&#x0D;&#x0A;- Renamed element: &apos;RedSocial/src/main/java/com.RedSocial.core.exception&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.RedSocial.core.Exception&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.RedSocial.core.Exception" name="com.RedSocial.core.exception" qualified="false" references="true" stamp="1621954211215" textual="false" version="1.0"/>
+</session>

@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.RedSocial.core.Exception.EntityNotFoundException;
-import com.RedSocial.core.Exception.InformationRequiredException;
 import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.entity.Usuario;
+import com.RedSocial.core.exception.EntityNotFoundException;
+import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.repository.PublicacionRepository;
 
 @Service("PublicacionService")
@@ -80,7 +80,7 @@ public class PublicacionService {
 		return publicacionRepository.findAll();
 	}
 		
-	public boolean meGusta(long idPublicacion) {
+	public boolean meGusta(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
 		
 		if (Objects.isNull(idPublicacion) || idPublicacion == 0)
 			throw new InformationRequiredException("Debe ingresar el ID de la publicación sobre la que quiere dar me gusta."); 
@@ -94,5 +94,16 @@ public class PublicacionService {
 		publicacionRepository.save(publicacion);
 		
 		return true;
+	}
+	
+	public Publicacion buscar(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
+		
+		if (Objects.isNull(idPublicacion) || idPublicacion == 0)
+			throw new InformationRequiredException("Debe ingresar el ID de Publicación válido"); 
+		
+		if(publicacionRepository.findByIdPublicacion(idPublicacion) == null) 
+			throw new EntityNotFoundException("No fue posible retornar la publicación ya que la publicación no fue encontrada.");
+
+			return publicacionRepository.findByIdPublicacion(idPublicacion);
 	}
 }

@@ -1,4 +1,4 @@
-package com.RedSocial.core.Exception;
+package com.RedSocial.core.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

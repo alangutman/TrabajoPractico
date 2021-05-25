@@ -13,6 +13,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -41,10 +44,12 @@ public abstract class Comentario implements Serializable {
 		super();
 	}
 
-	public Comentario(long idComentario, Date fechaDePublicacion, String comentario, int meGusta, Usuario autor, Publicacion publicacion) {
+	public Comentario(long idComentario, Date fechaDePublicacion, Date fechaDeUltimaActualizacion, 
+			String comentario, int meGusta, Usuario autor, Publicacion publicacion) {
 		super();
 		this.idComentario = idComentario;
 		this.fechaDePublicacion = fechaDePublicacion;
+		this.fechaDeUltimaActualizacion = fechaDeUltimaActualizacion; 
 		this.comentario = comentario;
 		this.meGusta = meGusta;
 		this.autor = autor;
@@ -56,8 +61,13 @@ public abstract class Comentario implements Serializable {
 	@Column(name="idComentario")
 	private long idComentario;
 	
+	@CreationTimestamp
 	@Column(name="fechaDePublicacion")
 	private Date fechaDePublicacion;
+	
+    @UpdateTimestamp
+    @Column(name="fechaDeUltimaActualizacion")
+	private Date fechaDeUltimaActualizacion;
 		
 	@Column(name="comentario")
 	private String comentario;
@@ -91,17 +101,27 @@ public abstract class Comentario implements Serializable {
 	public void setFechaDePublicacion(Date fechaDePublicacion) {
 		this.fechaDePublicacion = fechaDePublicacion;
 	}
+	
+	
+	public Date getFechaDeUltimaActualizacion() {
+		return fechaDeUltimaActualizacion;
+	}
 
+	
+	public void setFechaDeUltimaActualizacion(Date fechaDeUltimaActualizacion) {
+		this.fechaDeUltimaActualizacion = fechaDeUltimaActualizacion;
+	}
 
+	
 	public String getComentario() {
 		return comentario;
 	}
 
-
+	
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
 	}
-
+	
 
 	public int getMeGusta() {
 		return meGusta;

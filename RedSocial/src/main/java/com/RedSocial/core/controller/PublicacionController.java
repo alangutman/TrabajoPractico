@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.RedSocial.core.Exception.EntityNotFoundException;
-import com.RedSocial.core.Exception.InformationRequiredException;
 import com.RedSocial.core.entity.Publicacion;
+import com.RedSocial.core.exception.EntityNotFoundException;
+import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.service.PublicacionService;
 
 @RestController
@@ -94,6 +94,27 @@ public class PublicacionController {
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body("Publicación borrada exitosamente.");
+	}
+	
+	@GetMapping("/publicacion/{idPublicacion}")
+	public ResponseEntity<Object> buscar(@PathVariable("idPublicacion") long idPublicacion) {
+		try {
+			Publicacion publicacion = publicacionService.buscar(idPublicacion);
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(publicacion);
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+
 	}
 	
 	@GetMapping("/publicacion")

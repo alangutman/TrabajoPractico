@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Comentario;
+import com.RedSocial.core.exception.EntityNotFoundException;
+import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.service.ComentarioService;
 
 @RestController
@@ -26,18 +30,71 @@ public class ComentarioController {
 	ComentarioService comentarioService;
 	
 	@PutMapping("/comentario")
-	public boolean crear(@RequestBody @Validated Comentario comentario) {
-		return comentarioService.crear(comentario);
+	public ResponseEntity<Object> crear(@RequestBody @Validated Comentario comentario) {
+	
+		try {			
+			comentarioService.crear(comentario);
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body("Comentario creado exitosamente.");
+		
 	}
 	
 	@PostMapping("/comentario")
-	public boolean actualizar(@RequestBody @Validated Comentario comentario) {
-		return comentarioService.actualizar(comentario);
+	public ResponseEntity<Object> actualizar(@RequestBody @Validated Comentario comentario) {
+		
+		try {
+			comentarioService.actualizar(comentario);		
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+		
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body("Comentario actualizado exitosamente.");
+		
 	}
 	
 	@DeleteMapping("/comentario/{idComentario}")
-	public boolean borrar(@PathVariable("idComentario") long idComentario) {
-		return comentarioService.borrar(idComentario);
+	public ResponseEntity<Object> borrar(@PathVariable("idComentario") long idComentario) {
+	
+		try {
+			comentarioService.borrar(idComentario);	
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+		
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body("Comentario borrado exitosamente.");
 	}
 	
 	@GetMapping("/comentario")
@@ -46,7 +103,25 @@ public class ComentarioController {
 	}
 	
 	@PostMapping("/comentario/meGusta/{idComentario}")
-	public boolean meGusta(@PathVariable("idComentario") long idComentario) {
-		return comentarioService.meGusta(idComentario);
+	public ResponseEntity<Object> meGusta(@PathVariable("idComentario") long idComentario) {
+		
+		try {
+			comentarioService.meGusta(idComentario);	
+		}
+		catch(InformationRequiredException e) {
+			return ResponseEntity
+					.status(HttpStatus.BAD_REQUEST)
+					.body(e.getMessage());
+		}
+		catch(EntityNotFoundException e) {
+			return ResponseEntity
+					.status(HttpStatus.NOT_FOUND)
+					.body(e.getMessage());
+		}
+		
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body("Me gusta dato exitosamente.");
 	}
+	
 }

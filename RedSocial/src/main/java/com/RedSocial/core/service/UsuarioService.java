@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.RedSocial.core.Exception.EntityAlreadyExistsException;
-import com.RedSocial.core.Exception.EntityNotFoundException;
-import com.RedSocial.core.Exception.InformationRequiredException;
 import com.RedSocial.core.entity.Usuario;
+import com.RedSocial.core.exception.EntityAlreadyExistsException;
+import com.RedSocial.core.exception.EntityNotFoundException;
+import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.repository.UsuarioRepository;
 
 @Service("UsuarioService")
