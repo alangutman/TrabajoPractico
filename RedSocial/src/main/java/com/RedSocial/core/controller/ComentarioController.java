@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Comentario;
+import com.RedSocial.core.exception.EmptyListException;
 import com.RedSocial.core.exception.EntityNotFoundException;
 import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.service.ComentarioService;
@@ -98,8 +99,20 @@ public class ComentarioController {
 	}
 	
 	@GetMapping("/comentario")
-	public List<Comentario> obtener(){
-		return comentarioService.obtener();
+	public ResponseEntity<Object> obtener(){
+
+		try {
+			List<Comentario> comentarios = comentarioService.obtener();
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(comentarios);
+		}
+		catch(EmptyListException e) {
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(e.getMessage());
+		}
+		
 	}
 	
 	@PostMapping("/comentario/meGusta/{idComentario}")

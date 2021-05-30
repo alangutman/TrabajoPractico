@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Publicacion;
+import com.RedSocial.core.exception.EmptyListException;
 import com.RedSocial.core.exception.EntityNotFoundException;
 import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.service.PublicacionService;
@@ -118,8 +119,20 @@ public class PublicacionController {
 	}
 	
 	@GetMapping("/publicacion")
-	public List<Publicacion> obtener(){
-		return publicacionService.obtener();
+	public ResponseEntity<Object> obtener(){
+
+		try {
+			List<Publicacion> publicaciones = publicacionService.obtener();
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(publicaciones);
+		}
+		catch(EmptyListException e) {
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(e.getMessage());
+		}
+		
 	}
 	
 	@PostMapping("/publicacion/meGusta/{idPublicacion}")

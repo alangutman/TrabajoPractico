@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.RedSocial.core.entity.Foto;
 import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.entity.Usuario;
+import com.RedSocial.core.exception.EmptyListException;
 import com.RedSocial.core.exception.EntityNotFoundException;
 import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.repository.PublicacionRepository;
@@ -23,53 +25,47 @@ public class PublicacionService {
 	@Autowired
 	@Qualifier("UsuarioService")
 	private UsuarioService usuarioService;
+
+	@Autowired
+	@Qualifier("FotoService")
+	private FotoService fotoService;
 	
-	public boolean crear(Publicacion publicacion) throws InformationRequiredException, EntityNotFoundException {
-	
-		/*
-		 * 1. Valida que se haya ingresado un título.
-		 */  
-			if(Objects.isNull(publicacion.getTitulo()) || Objects.equals("", publicacion.getTitulo()))
-				throw new InformationRequiredException("Debe ingresar un Título.");
+	public void crear(Publicacion publicacion) throws InformationRequiredException, EntityNotFoundException {
 		
 		/*
-		 * 2. Valida que se haya ingresado una descripción.
+		 * 1. Valida datos de la publicacion.
 		 */  
-			if(Objects.isNull(publicacion.getDescripcion()) || Objects.equals("", publicacion.getDescripcion()))
-				throw new InformationRequiredException("Debe ingresar una Descripción.");
-		
+			validar(publicacion);
+			
 		/*
-		 * 3. Valida que el usuario exista.
+		 * 2. Valida que el usuario exista.
 		 */  
 			Usuario autor = usuarioService.buscar(publicacion.getAutor().getIdUsuario());	
-		
+					
 		/*
-		 * 4. Setea el autor de la publicación.
+		 * 3. Setea el autor de la publicación.
 		 */  
 			publicacion.setAutor(autor);
 		
 		/*
-		 * 5. Crea la publicación.
+		 * 4. Crea la publicación.
 		 */  
 			publicacionRepository.save(publicacion);
 		
-		return true;
-
 	}
 		
-	public boolean actualizar(Publicacion publicacion) throws InformationRequiredException, EntityNotFoundException {
+	public void actualizar(Publicacion publicacion) throws InformationRequiredException, EntityNotFoundException {
 
 		/*
 		 * 1. Valida que la publicación exista.
 		 */ 
 			Publicacion publicacionOriginal = buscar(publicacion.getIdPublicacion());
-			
-		/*
-		 * 2. Valida que se haya ingresado un título.
-		 */  
-			if(Objects.isNull(publicacion.getTitulo()) || Objects.equals("", publicacion.getTitulo()))
-				throw new InformationRequiredException("Debe ingresar un Título.");
 		
+		/*
+		 * 2. Valida datos de la publicacion.
+		 */  
+			validar(publicacion);
+			
 		/*
 		 * 3. Carga autor y la fecha de la publicación.
 		 */
@@ -77,21 +73,13 @@ public class PublicacionService {
 			publicacion.setFechaDePublicacion(publicacionOriginal.getFechaDePublicacion());
 			
 		/*
-		 * 4. Valida que se haya ingresado una descripción.
-		 */  
-			if(Objects.isNull(publicacion.getDescripcion()) || Objects.equals("", publicacion.getDescripcion()))
-				throw new InformationRequiredException("Debe ingresar una Descripción.");
-
-		/*
-		 * 5. Actualiza la publicación.
+		 * 4. Actualiza la publicación.
 		 */ 
 			publicacionRepository.save(publicacion);
 
-		return true;
-		
 	}
 	
-	public boolean borrar(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
+	public void borrar(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
 
 		/*
 		 * 1. Valida que la publicación exista.
@@ -103,15 +91,19 @@ public class PublicacionService {
 		 */ 		
 			publicacionRepository.delete(publicacion);
 
-		return true;
-		
 	}
 	
-	public List<Publicacion> obtener(){
-		return publicacionRepository.findAll();
-	}
+	public List<Publicacion> obtener() throws EmptyListException {
 		
-	public boolean meGusta(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
+		List<Publicacion> publicaciones = publicacionRepository.findAll();
+		
+		if (publicaciones.isEmpty())
+			throw new EmptyListException("No hay publicaciones registradas para mostrar");
+		
+		return publicaciones;
+	}
+	
+	public void meGusta(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
 		
 		/*
 		 * 1. Valida que la publicación exista.
@@ -128,7 +120,6 @@ public class PublicacionService {
 		 */ 			
 			publicacionRepository.save(publicacion);
 		
-		return true;
 	}
 	
 	public Publicacion buscar(long idPublicacion) throws InformationRequiredException, EntityNotFoundException {
@@ -141,4 +132,29 @@ public class PublicacionService {
 
 			return publicacionRepository.findByIdPublicacion(idPublicacion);
 	}
+	
+	public void validar(Publicacion publicacion) throws InformationRequiredException {
+		
+		/*
+		 * 1. Valida que se haya ingresado un título.
+		 */  
+			if(Objects.isNull(publicacion.getTitulo()) || Objects.equals("", publicacion.getTitulo()))
+				throw new InformationRequiredException("Debe ingresar un Título.");
+		
+		/*
+		 * 2. Valida que se haya ingresado una descripción.
+		 */  
+			if(Objects.isNull(publicacion.getDescripcion()) || Objects.equals("", publicacion.getDescripcion()))
+				throw new InformationRequiredException("Debe ingresar una Descripción.");
+		
+		/*
+		 * 3. Si el autor cargó fotos, las mando a validar.
+		 */
+		if(!publicacion.getFotos().isEmpty()) {
+			for(Foto foto : publicacion.getFotos())
+				fotoService.validar(foto);
+		}
+		
+	}
+	
 }

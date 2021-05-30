@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.RedSocial.core.entity.Foto;
+import com.RedSocial.core.exception.EmptyListException;
+import com.RedSocial.core.exception.EntityNotFoundException;
+import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.repository.FotoRepository;
 
 @Service("FotoService")
@@ -16,38 +19,95 @@ public class FotoService {
 	@Qualifier("FotoRepository")
 	private FotoRepository fotoRepository;
 	
-	public boolean crear(Foto foto) {
-		try {
+	public void crear(Foto foto) throws InformationRequiredException{
+		
+		/*
+		 * 1. Valida la foto.
+		 */
+			validar(foto);
+			
+		/*
+		 * 2. Crea la foto.
+		 */ 
 			fotoRepository.save(foto);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
+			
 	}
 		
-	public boolean actualizar(Foto foto) {
-		try {
-			if (foto.getIdFoto() == 0 || Objects.isNull(foto.getIdFoto()))
-				return false; 
-			
+	public void actualizar(Foto foto) throws InformationRequiredException, EntityNotFoundException {
+		
+			/*
+			 * 1. Valida que la foto exista.
+			 */ 
+				buscar(foto.getIdFoto());
+	
+			/*
+			 * 2. Valida la foto.
+			 */
+				validar(foto);
+					
+			/*
+			 * 3. Actualiza la foto.
+			 */ 
 			fotoRepository.save(foto);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
+			
 	}
 	
-	public boolean borrar(long idFoto) {
-		try {
-			Foto foto = fotoRepository.findByIdFoto(idFoto);
-			fotoRepository.delete(foto);
-			return true;
-		}catch(Exception e) {
-			return false;
-		}
+	public void borrar(long idFoto) throws InformationRequiredException, EntityNotFoundException {
+		
+		/*
+		 * 1. Valida que la foto exista.
+		 */ 
+			Foto foto = buscar(idFoto);
+
+		/*
+		 * 2. Actualiza la foto.
+		 */ 
+		fotoRepository.delete(foto);
+
 	}
 	
-	public List<Foto> obtener(){
-		return fotoRepository.findAll();
+	public Foto buscar(long idFoto) throws InformationRequiredException, EntityNotFoundException {
+		
+		/*
+		 * 1. Valida que se haya ingresado un ID para buscar la foto.
+		 */  
+			if (Objects.isNull(idFoto) || idFoto == 0)
+				throw new InformationRequiredException("Debe ingresar un ID de foto válido"); 
+		
+		/*
+		 * 2. Valida que la foto exista.
+		 */  
+			if(fotoRepository.findByIdFoto(idFoto) == null) 
+				throw new EntityNotFoundException("No fue posible retornar la foto ya que la foto no fue encontrada.");
+
+		return fotoRepository.findByIdFoto(idFoto);
 	}
+	
+	public List<Foto> obtener() throws EmptyListException {
+
+			List<Foto> fotos = fotoRepository.findAll();
+			
+			if (fotos.isEmpty())
+				throw new EmptyListException("No hay fotos registrados para mostrar");
+			
+		return fotos;
+		
+	}
+	
+	public void validar(Foto foto) throws InformationRequiredException {
+	
+		/*
+		 * 1. Valida que se haya ingresado un nombre.
+		 */ 
+			if(Objects.isNull(foto.getNombre()))
+				throw new InformationRequiredException("Debe ingresar un Nombre para la foto.");
+
+		/*
+		 * 2. Valida que se haya ingresado una ubicación.
+		 */ 
+			if(Objects.isNull(foto.getUbicacion()))
+				throw new InformationRequiredException("Debe ingresar una Ubicación.");
+			
+	}
+	
 }

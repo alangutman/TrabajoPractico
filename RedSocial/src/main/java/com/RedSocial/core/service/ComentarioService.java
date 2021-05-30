@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.RedSocial.core.entity.Comentario;
 import com.RedSocial.core.entity.Publicacion;
 import com.RedSocial.core.entity.Usuario;
+import com.RedSocial.core.exception.EmptyListException;
 import com.RedSocial.core.exception.EntityNotFoundException;
 import com.RedSocial.core.exception.InformationRequiredException;
 import com.RedSocial.core.repository.ComentarioRepository;
@@ -29,14 +30,13 @@ public class ComentarioService {
 	@Qualifier("PublicacionService")
 	private PublicacionService publicacionService;
 	
-	public boolean crear(Comentario comentario) throws InformationRequiredException, EntityNotFoundException  {
+	public void crear(Comentario comentario) throws InformationRequiredException, EntityNotFoundException  {
 
 		/*
 		 * 1. Valida que se haya ingresado un comentario.
 		 */
-			if(Objects.isNull(comentario.getComentario()) || Objects.equals("", comentario.getComentario()))
-				throw new InformationRequiredException("Debe ingresar un comentario.");
-		
+			validar(comentario);
+			
 		/*
 		 * 2. Valida que el autor sea válido.
 		 */
@@ -62,22 +62,19 @@ public class ComentarioService {
 		 */
 			comentarioRepository.save(comentario);
 		
-		return true;
-
 	}
 		
-	public boolean actualizar(Comentario comentario) throws InformationRequiredException, EntityNotFoundException {
+	public void actualizar(Comentario comentario) throws InformationRequiredException, EntityNotFoundException {
 
 		/*
 		 * 1. Valida que el comentario exista.
 		 */
-		Comentario comentarioOriginal =	buscar(comentario.getIdComentario());
+			Comentario comentarioOriginal =	buscar(comentario.getIdComentario());
 		
 		/*
 		 * 2. Valida que se haya ingresado un comentario.
 		 */
-			if(Objects.isNull(comentario.getComentario()) || Objects.equals(comentario.getComentario(), ""))
-				throw new InformationRequiredException("Debe ingresar un comentario");
+			validar(comentario);
 			
 		/*
 		 * 3. Carga autor, publicación y fecha de publicación del comentario.
@@ -90,12 +87,10 @@ public class ComentarioService {
 		 * 4. Actualiza el comentario.
 		 */
 			comentarioRepository.save(comentario);
-		
-		return true;
 
 	}
 	
-	public boolean borrar(long idComentario) throws InformationRequiredException, EntityNotFoundException {
+	public void borrar(long idComentario) throws InformationRequiredException, EntityNotFoundException {
 		
 		/*
 		 * 1. Valida que el comentario exista.
@@ -107,15 +102,19 @@ public class ComentarioService {
 		 */
 		comentarioRepository.delete(comentario);
 		
-		return true;
-
 	}
 	
-	public List<Comentario> obtener(){
-		return comentarioRepository.findAll();
+	public List<Comentario> obtener() throws EmptyListException {
+		
+		List<Comentario> comentarios = comentarioRepository.findAll();
+		
+		if (comentarios.isEmpty())
+			throw new EmptyListException("No hay comentarios registrados para mostrar");
+		
+		return comentarios;
 	}
 
-	public boolean meGusta(long idComentario) {
+	public void meGusta(long idComentario) {
 	
 			/*
 			 * 1. Valida que el comentario exista.
@@ -131,8 +130,6 @@ public class ComentarioService {
 			 * 3. Actualiza el comentario.
 			 */
 				comentarioRepository.save(comentario);
-			
-			return true;
 
 	}
 	
@@ -145,6 +142,13 @@ public class ComentarioService {
 				throw new EntityNotFoundException("No fue posible retornar el comentario ya que el comentario no fue encontrado.");
 	
 		return comentarioRepository.findByIdComentario(idComentario);
+	}
+	
+	public void validar(Comentario comentario) throws InformationRequiredException {
+	
+		if(Objects.isNull(comentario.getComentario()) || Objects.equals("", comentario.getComentario()))
+			throw new InformationRequiredException("Debe ingresar un comentario.");
+
 	}
 	
 }

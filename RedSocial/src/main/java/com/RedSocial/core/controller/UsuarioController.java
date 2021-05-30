@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RedSocial.core.entity.Usuario;
+import com.RedSocial.core.exception.EmptyListException;
 import com.RedSocial.core.exception.EntityAlreadyExistsException;
 import com.RedSocial.core.exception.EntityNotFoundException;
 import com.RedSocial.core.exception.InformationRequiredException;
@@ -117,8 +118,19 @@ public class UsuarioController {
 	
 	
 	@GetMapping("/usuario")
-	public List<Usuario> obtener(){
-		return usuarioService.obtener();
+	public ResponseEntity<Object> obtener(){
+
+		try {
+			List<Usuario> usuarios = usuarioService.obtener();
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(usuarios);
+		}
+		catch(EmptyListException e) {
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(e.getMessage());
+		}
+		
 	}
-	
 }

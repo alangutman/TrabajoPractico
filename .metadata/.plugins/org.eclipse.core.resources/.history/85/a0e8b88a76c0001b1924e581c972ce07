@@ -1,0 +1,5 @@
+package com.RedSocial.core.exception;
+
+public class EmptyListException {
+
+}

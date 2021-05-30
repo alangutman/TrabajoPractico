@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.RedSocial.core.entity.Usuario;
+import com.RedSocial.core.exception.EmptyListException;
 import com.RedSocial.core.exception.EntityAlreadyExistsException;
 import com.RedSocial.core.exception.EntityNotFoundException;
 import com.RedSocial.core.exception.InformationRequiredException;
@@ -29,25 +30,12 @@ public class UsuarioService {
 				throw new EntityAlreadyExistsException("No fue posible crear el usuario ya que el alias de usuario ya está en uso.");
 			
 		/*
-		 * 2. Valida que se haya ingresado un apodo.
-		 */ 
-			if(Objects.isNull(usuario.getApodo()))
-				throw new InformationRequiredException("Debe ingresar un Apodo.");
-
+		 * 2. Valida que se hayan completado los datos.
+		 */
+			validar(usuario);
+		
 		/*
-		 * 3. Valida que se haya ingresado un email.
-		 */ 
-			if(Objects.isNull(usuario.getEmail()))
-				throw new InformationRequiredException("Debe ingresar un Email.");
-			
-		/*
-		 * 4. Valida que se haya ingresado una contraseña.
-		 */ 
-			if(Objects.isNull(usuario.getContrasenia()))
-				throw new InformationRequiredException("Debe ingresar una Contraseña.");
-
-		/*
-		 * 5. Crea el usuario.
+		 * 3. Crea el usuario.
 		 */ 
 			usuarioRepository.save(usuario);
 			
@@ -101,8 +89,36 @@ public class UsuarioService {
 		return usuarioRepository.findByIdUsuario(idUsuario);
 	}
 	
-	public List<Usuario> obtener(){
-		return usuarioRepository.findAll();
+	public List<Usuario> obtener() throws EmptyListException {
+		
+		List<Usuario> usuarios = usuarioRepository.findAll();
+		
+		if (usuarios.isEmpty())
+			throw new EmptyListException("No hay usuarios registrados para mostrar");
+		
+		return usuarios;
+	}
+	
+	public void validar(Usuario usuario) throws InformationRequiredException {
+
+		/*
+		 * 1. Valida que se haya ingresado un apodo.
+		 */ 
+			if(Objects.isNull(usuario.getApodo()))
+				throw new InformationRequiredException("Debe ingresar un Apodo.");
+
+		/*
+		 * 2. Valida que se haya ingresado un email.
+		 */ 
+			if(Objects.isNull(usuario.getEmail()))
+				throw new InformationRequiredException("Debe ingresar un Email.");
+			
+		/*
+		 * 3. Valida que se haya ingresado una contraseña.
+		 */ 
+			if(Objects.isNull(usuario.getContrasenia()))
+				throw new InformationRequiredException("Debe ingresar una Contraseña.");
+		
 	}
 
 }
