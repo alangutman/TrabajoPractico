@@ -1,5 +1,0 @@
-package com.RedSocial.core.Exception;
-
-public class EntityAlreadyExistsException {
-
-}
